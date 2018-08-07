@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Users</title>
+</head>
+
+<style>
+	table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	}
+ 
+	td, th {
+	    border: 1px solid #dddddd;
+	    text-align: left;
+	    padding: 8px;
+	}
+ 
+	tr:nth-child(even) {
+	    background-color: #dddddd;
+	}
+</style>
+
+<body>
+
+	<table id="employees" style="width:100%">
+    {% if result %}
+	    <tr>
+	        <th>Username</th>
+	        <th>Status</th>
+	        <th>Previous Status</th>
+	        <th>Date Hired</th>
+	    </tr>
+	    {% for row in result %}
+	    <tr>
+	        <td> {{ row.user_name }}</td>
+	        <td> {{ row.status }}</td>
+	        <td> {{ row.prev_date }}</td>
+	        <td> {{ row.hired_date }}</td>
+	    </tr>
+	    {% endfor %}
+	  {% else %}
+	  	NO RECORDS FOUND!
+
+    {% endif %}
+	</table>
+
+</body>
+
+</html>

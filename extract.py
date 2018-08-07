@@ -13,6 +13,8 @@ extract = Flask(__name__)
 extract.config.from_object(__name__)
 CORS(extract)
 
+folder = 'templates/'
+
 
 @extract.route('/')
 def index_page():

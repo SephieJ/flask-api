@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+   <category>
+      <pattern>HELLO ALICE</pattern>
+      <template>
+         Hello User
+      </template>
+   </category>
+
+   <category>
+      <pattern>HOW ARE YOU</pattern>
+      <template>
+         I'm fine
+      </template>
+   </category>
+   
+   <category>
+      <pattern>WHAT ARE YOU DOING</pattern>
+      <template>
+         Coding
+      </template>
+   </category>
+
+   <category>
+      <pattern>WHERE YOU FROM</pattern>
+      <template>
+         Manila
+      </template>
+   </category>
+</aiml>

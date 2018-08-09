@@ -1,24 +1,73 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
-;
-<aiml version = "1.0.1" encoding = "UTF-8"?>
+
+<aiml version="1.0.1" encoding="UTF-8">
+  <topic name="botdog">
    <category>
-      <pattern> HELLO ALICE </pattern>
+      <pattern>MY DOG'S NAME IS *</pattern>
+      <template>
+         That is interesting that you have a dog named <set name="dog"><star/></set>
+      </template>  
+   </category>
+
+   <category>
+      <pattern>WHAT IS MY DOG'S NAME</pattern>
+      <template>
+         Your dog's name is <get name="dog"/>.
+      </template>  
+   </category>  
+  </topic>
+
+  <topic name="botcat">
+   <category>
+      <pattern>MY CAT'S NAME IS *</pattern>
+      <template>
+         That is interesting that you have a cat named <set name="cat"><star/></set>
+      </template>  
+   </category>
+
+   <category>
+      <pattern>WHAT IS MY CAT'S NAME</pattern>
+      <template>
+         Your cat's name is <get name="cat"/>.
+      </template>  
+   </category>  
+  </topic>
+
+  <topic name="botrabbit">
+   <category>
+      <pattern>MY RABBIT'S NAME IS *</pattern>
+      <template>
+         That is interesting that you have a rabbit named <set name="rabbit"><star/></set>
+      </template>  
+   </category>
+
+   <category>
+      <pattern>WHAT IS MY RABBIT'S NAME</pattern>
+      <template>
+         Your cat's name is <get name="cat"/>.
+      </template>  
+   </category>  
+  </topic>
+
+
+  <category>
+      <pattern>HELLO ALICE</pattern>
       <template>
          Hello User
       </template>
    </category>
 
    <category>
-      <pattern>How are you?</pattern>
+      <pattern>HOW ARE YOU</pattern>
       <template>
          I'm fine
       </template>
    </category>
-   
+
    <category>
-      <pattern>What are you doing?</pattern>
+      <pattern>WHAT ARE YOU DOING?</pattern>
       <template>
-         Coding
+         Coding?
       </template>
    </category>
 </aiml>

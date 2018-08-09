@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
+from bs4 import BeautifulSoup
+import os
+import glob
 
 
 # Configuration
@@ -13,12 +16,22 @@ extract = Flask(__name__)
 extract.config.from_object(__name__)
 CORS(extract)
 
-folder = 'templates/'
-
 
 @extract.route('/')
 def index_page():
-    return 'Hello'
+    folder = 'temp_aiml/'
+    for filename in glob.glob(os.path.join(folder, '*.aiml')):
+        print(filename)
+        with open(filename, 'r') as myfile:
+            soup = BeautifulSoup(myfile.read(), 'html.parser')
+        data = []
+        for cat in soup.find_all('category'):
+            if cat.parent.name == "topic":
+                continue
+            data += [cat.find("pattern").text]
+        print(data)
+        data_set = " ".join(data)
+        return data_set
 
 
 if __name__ == '__main__':
